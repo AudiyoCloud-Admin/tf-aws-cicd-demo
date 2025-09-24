@@ -83,6 +83,7 @@ resource "aws_s3_bucket" "demo" {
   bucket = "${var.project}-${random_id.suffix.hex}"
   tags = {
     Name = "${var.project}-bucket"
+    Environment = "Demo"   # <-- new tag
   }
 }
 
