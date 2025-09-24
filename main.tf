@@ -61,7 +61,7 @@ resource "aws_instance" "web" {
   subnet_id                   = data.aws_subnets.default.ids[0]
   vpc_security_group_ids      = [aws_security_group.web.id]
   associate_public_ip_address = true
-  key_name                    = "tf-demo-key"   # Key Pair
+  key_name                    = "tf-demo-key" # Key Pair
 
   user_data = <<-EOF
               #!/bin/bash
@@ -73,8 +73,8 @@ resource "aws_instance" "web" {
               EOF
 
   tags = {
-    Name = "${var.project}-ec2"
-    Environment = "Demo"   # <-- new tag
+    Name        = "${var.project}-ec2"
+    Environment = "Demo" # <-- new tag
   }
 }
 
